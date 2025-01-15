@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: lego
+    description: This table depends on the unique_parts model and this is used to show the theme and year of the lego parts #description test
     columns:
       - name: theme_name # replace with actual column name
         data_tests:
@@ -12,3 +13,11 @@ models:
       - name: set_year 
         data_tests:
           - not_null
+
+  - name: unique_parts
+    description: This is a single column table which shows all unique lego parts. #description test
+    columns:
+      - name: part_num # replace with actual column name
+        data_tests:
+          - not_null
+          - unique
